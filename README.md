@@ -11,6 +11,10 @@ https://docs.paramiko.org/en/stable/
 
 https://docs.paramiko.org/en/stable/api/sftp.html
 
+#For Process Parallel Processing
+
+https://docs.python.org/3/library/multiprocessing.html
+
 
 #Install dependencies
 
