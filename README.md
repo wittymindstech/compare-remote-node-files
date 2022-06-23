@@ -12,6 +12,16 @@ https://docs.paramiko.org/en/stable/
 https://docs.paramiko.org/en/stable/api/sftp.html
 
 
+#Install dependencies
+
+`pip install -r requirements.txt`
+
+#Or Installl dependencies manually one by one
+
+`pip install subprocess`
+`pip install paramiko`
+
+
 # Steps to run the code
 
 `python3 compareFilesInNodes.py`
