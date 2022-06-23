@@ -13,11 +13,11 @@ client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
 file_list = []
 
-host1 = "3.93.193.171"
-host2 = "3.93.193.171"
+host1 = "3.93.193.XXX"
+host2 = "3.93.193.XXX"
 
 
-filepath="/home/ubuntu/test"
+filepath="/home/ubuntu/test/"
 
 def readFileNode(host):
     try:
@@ -59,9 +59,6 @@ def compareFilesOnNode(listoffiles):
     print(fileNode1[0].filename)
     print(fileNode2[0].filename)
 
-    path1 = "/home/ubuntu/test/"
-    path2 = "/home/ubuntu/test1/"
-
     FileCountNode1 = len(fileNode1)
     FileCountNode2 = len(fileNode2)
 
@@ -71,13 +68,14 @@ def compareFilesOnNode(listoffiles):
 
     counter=min(len(fileNode1),len(fileNode2))
     for i in range(0,counter ):
-        filePath1 = path1 + fileNode1[i].filename
-        filePath2 = path2 + fileNode2[i].filename
+        filePath1 = filepath + fileNode1[i].filename
+        filePath2 = filepath + fileNode2[i].filename
 
         print("Comparing:", filePath1, "From host:", host1, "to", filePath2, "In Host:", host2)
         s1 = mysftp1.open(filePath1)
         s2 = mysftp2.open(filePath2)
 
+        #file metadata validation
         print(s1.stat)
         print(s2.stat)
 
@@ -97,6 +95,9 @@ def compareFilesOnNode(listoffiles):
         else:
             print("File Content are Not Equal")
             yield "fail"
+
+        s1.close()
+        s2.close()
 
 
 
