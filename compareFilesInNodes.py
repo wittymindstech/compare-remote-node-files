@@ -3,7 +3,9 @@ import paramiko
 
 from multiprocessing import Process, Pool
 
-key = paramiko.RSAKey.from_private_key_file("/Users/kumargaurav/Downloads/concourse.pem")
+#Assuming same keys are used for both the nodes Node1 and Node 2 from Node 3 
+
+key = paramiko.RSAKey.from_private_key_file("/Users/Downloads/nodekey.pem")
 
 client = paramiko.SSHClient()
 
@@ -17,12 +19,12 @@ host1 = "3.93.193.XXX"
 host2 = "3.93.193.XXX"
 
 
-filepath="/home/ubuntu/test/"
+filepath="/mnt/share1/test"
 
 def readFileNode(host):
     try:
 
-        # Here 'ubuntu' is user name and 'instance_ip' is public IP of EC2
+        # Here 'ubuntu' is user name and 'instance_ip' is public IP of Node
 
         client.connect(hostname=host, username="ubuntu", pkey=key)
 
