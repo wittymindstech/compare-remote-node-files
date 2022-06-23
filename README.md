@@ -14,7 +14,7 @@ https://docs.paramiko.org/en/stable/api/sftp.html
 
 # Steps to run the code
 
-`python3 compareFilesInNode.py`
+`python3 compareFilesInNodes.py`
 
 
 
