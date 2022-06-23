@@ -12,4 +12,9 @@ https://docs.paramiko.org/en/stable/
 https://docs.paramiko.org/en/stable/api/sftp.html
 
 
+# Steps to run the code
+
+`python3 compareFilesInNode.py`
+
+
 
